@@ -1,0 +1,24 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tasklist?currentSchema=tasklist
+    username: postgres
+    password: tawkenskiy
+    driver-class-name: org.postgresql.Driver
+
+  sql:
+    init:
+      continue-on-error: false
+      data-locations: classpath:demo_data.sql
+
+#mybatis:
+#  mapper-locations: classpath:mybatis/mapper/*.xml
+#
+#security:
+# jwt:
+#   secret:
+#   access:
+#   refresh:
+
