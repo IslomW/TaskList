@@ -1,4 +1,4 @@
-package com.sharipov.tasklist.repository;
+package com.sharipov.tasklist.repository.mapper;
 
 import com.sharipov.tasklist.domain.user.Role;
 import com.sharipov.tasklist.domain.user.User;

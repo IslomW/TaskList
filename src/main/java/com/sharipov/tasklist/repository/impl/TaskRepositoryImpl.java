@@ -1,7 +1,7 @@
 package com.sharipov.tasklist.repository.impl;
 
 import com.sharipov.tasklist.domain.task.Task;
-import com.sharipov.tasklist.repository.TaskRepository;
+import com.sharipov.tasklist.repository.mapper.TaskRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

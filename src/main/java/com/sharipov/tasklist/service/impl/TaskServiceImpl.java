@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Service
-public class TaskServiceImpl implements TaskService{
+public class TaskServiceImpl implements TaskService {
     @Override
     public Task getById(Long id) {
         return null;

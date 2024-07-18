@@ -1,4 +1,4 @@
-package com.sharipov.tasklist.repository;
+package com.sharipov.tasklist.repository.mapper;
 
 import com.sharipov.tasklist.domain.task.Task;
 

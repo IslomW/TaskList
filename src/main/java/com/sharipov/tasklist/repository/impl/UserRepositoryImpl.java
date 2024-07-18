@@ -2,7 +2,7 @@ package com.sharipov.tasklist.repository.impl;
 
 import com.sharipov.tasklist.domain.user.Role;
 import com.sharipov.tasklist.domain.user.User;
-import com.sharipov.tasklist.repository.UserRepository;
+import com.sharipov.tasklist.repository.mapper.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
