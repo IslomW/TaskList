@@ -9,11 +9,11 @@ public interface TaskService {
 
     List<Task> getAllById(Long userId);
 
-    void assignToUserById(Long taskId, Long userId);
+//    void assignToUserById(Long taskId, Long userId);
 
     Task update(Task task);
 
-    Task create(Task task, Long id);
+    Task create(Task task, Long userId);
 
     void delete(Long id);
 
