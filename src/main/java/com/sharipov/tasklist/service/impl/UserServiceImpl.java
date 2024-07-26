@@ -24,14 +24,16 @@ public class UserServiceImpl implements UserService {
     @Transactional(readOnly = true)
     public User getById(Long id) {
         return userRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("User not found."));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found."));
     }
 
     @Override
     @Transactional(readOnly = true)
     public User getByUserName(String username) {
+
         return userRepository.findByUserName(username)
-                .orElseThrow(()-> new ResourceNotFoundException("User not found."));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found."));
+
     }
 
     @Override
@@ -45,9 +47,10 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User create(User user) {
-        if (userRepository.findByUserName(user.getUsername()).isPresent()){
+        if (userRepository.findByUserName(user.getUsername()).isPresent()) {
             throw new IllegalStateException("User already exists");
-        }if (!user.getPassword().equals(user.getPasswordConfirmation())){
+        }
+        if (!user.getPassword().equals(user.getPasswordConfirmation())) {
             throw new IllegalStateException("Password and password confirmation do not match");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));

@@ -5,6 +5,7 @@ import com.sharipov.tasklist.domain.exeption.ResourceNotFoundException;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,21 +17,23 @@ import java.io.IOException;
 public class JwtTokenFilter extends GenericFilterBean {
 
     private final JwtTokenProvider jwtTokenProvider;
+
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    @SneakyThrows
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) {
         String bearerToken = ((HttpServletRequest) servletRequest).getHeader("Authorization");
-        if (bearerToken != null && bearerToken.startsWith("Bearer ")){
+        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
             bearerToken = bearerToken.substring(7);
         }
+        try {
         if (bearerToken != null && jwtTokenProvider.isValid(bearerToken)){
-            try {
-                Authentication authentication = jwtTokenProvider.getAuthentication(bearerToken);
-                if (authentication != null){
-                    SecurityContextHolder.getContext().setAuthentication(authentication);
-                }
-            }catch (ResourceNotFoundException ignored){
-
+            Authentication authentication = jwtTokenProvider.getAuthentication(bearerToken);
+            if (authentication != null){
+                SecurityContextHolder.getContext()
+                        .setAuthentication(authentication);
             }
+        }
+        }catch (Exception ignored){
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }

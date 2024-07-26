@@ -13,7 +13,6 @@ import java.sql.Connection;
 public class DataSourceConfig {
     private final DataSource dataSource;
 
-
     public Connection getConnection() {
         return DataSourceUtils.getConnection(dataSource);
     }

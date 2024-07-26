@@ -20,7 +20,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
-    private DataSourceConfig dataSourceConfig;
+    private final DataSourceConfig dataSourceConfig;
 
 
     private final String FIND_BY_ID = """
@@ -56,8 +56,7 @@ public class UserRepositoryImpl implements UserRepository {
                      LEFT JOIN users_roles ur on u.id = ur.user_id
                      LEFT JOIN users_tasks ut on u.id = ut.user_id
                      LEFT JOIN tasks t on ut.task_id = t.id
-            WHERE u.username = ?
-            """;
+            WHERE u.username = ?""";
 
     private final String UPDATE = """
             UPDATE users

@@ -49,12 +49,12 @@ public class ApplicationConfig {
                         configurer.authenticationEntryPoint(
                                 (request, response, authException) -> {
                                     response.setStatus(HttpStatus.UNAUTHORIZED.value());
-                                    response.getWriter().write("Unauthorized.");
+                                    response.getWriter().write("Unauthorized1.");
                                 })
                                 .accessDeniedHandler(
                                         (request, response, accessDeniedException) -> {
                                             response.setStatus(HttpStatus.FORBIDDEN.value());
-                                            response.getWriter().write("Unauthorized.");
+                                            response.getWriter().write("Unauthorized2.");
                                         }))
                 .authorizeHttpRequests(configurer ->
                         configurer.requestMatchers("/api/v1/auth/**").permitAll()
