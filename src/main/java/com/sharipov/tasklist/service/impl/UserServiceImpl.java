@@ -3,7 +3,7 @@ package com.sharipov.tasklist.service.impl;
 import com.sharipov.tasklist.domain.exeption.ResourceNotFoundException;
 import com.sharipov.tasklist.domain.user.Role;
 import com.sharipov.tasklist.domain.user.User;
-import com.sharipov.tasklist.repository.mapper.UserRepository;
+import com.sharipov.tasklist.repository.UserRepository;
 import com.sharipov.tasklist.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

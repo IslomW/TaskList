@@ -1,4 +1,4 @@
-package com.sharipov.tasklist.repository.mapper;
+package com.sharipov.tasklist.repository;
 
 import com.sharipov.tasklist.domain.task.Task;
 
@@ -12,7 +12,7 @@ public interface TaskRepository {
 
     List<Task> findAllById(Long userId);
 
-    void assignToUserById(Long taskId, Long userId) throws SQLException;
+    void assignToUserById(Long taskId, Long userId);
 
     void update(Task task);
 

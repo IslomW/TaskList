@@ -4,7 +4,7 @@ import com.sharipov.tasklist.domain.exeption.ResourceNotFoundException;
 
 import com.sharipov.tasklist.domain.task.Status;
 import com.sharipov.tasklist.domain.task.Task;
-import com.sharipov.tasklist.repository.mapper.TaskRepository;
+import com.sharipov.tasklist.repository.TaskRepository;
 
 import com.sharipov.tasklist.service.TaskService;
 

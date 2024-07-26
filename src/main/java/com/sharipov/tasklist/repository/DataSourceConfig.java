@@ -1,4 +1,4 @@
-package com.sharipov.tasklist.repository.mapper;
+package com.sharipov.tasklist.repository;
 
 
 import lombok.RequiredArgsConstructor;

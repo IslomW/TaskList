@@ -1,15 +1,13 @@
 package com.sharipov.tasklist.repository.impl;
 
 import com.sharipov.tasklist.domain.exeption.ResourceMappingException;
-import com.sharipov.tasklist.domain.exeption.ResourceNotFoundException;
 import com.sharipov.tasklist.domain.task.Task;
-import com.sharipov.tasklist.repository.mapper.DataSourceConfig;
-import com.sharipov.tasklist.repository.mapper.TaskRepository;
+import com.sharipov.tasklist.repository.DataSourceConfig;
+import com.sharipov.tasklist.repository.TaskRepository;
 import com.sharipov.tasklist.repository.mapper.TaskRowMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.lang.reflect.Type;
 import java.sql.*;
 import java.util.List;
 import java.util.Optional;
