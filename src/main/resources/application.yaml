@@ -10,12 +10,21 @@ spring:
 
   sql:
     init:
+      mode: never
       continue-on-error: false
-      data-locations: classpath:demo_data.sql
+#      data-locations: classpath:demo_data.sql
 
-#mybatis:
+
+  liquibase:
+    change-log: classpath:liquibase/db.changelog.yaml
+    enabled: true
+    default-schema: tasklist
+
+
+
+#mybatis :
 #  mapper-locations: classpath:mybatis/mapper/*.xml
-#
+
 security:
  jwt:
    secret: ZmFkc2hqZ2JicWprd2NleGhycWtqZWh3eGh2cXdoeGp2Z2p5aHJncWV4aGplZ2hqeHF2YmhqZXh2cmhqcWtndndieGhqcnF3ZXhy

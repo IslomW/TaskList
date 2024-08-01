@@ -2,9 +2,10 @@ package com.sharipov.tasklist.repository;
 
 import com.sharipov.tasklist.domain.task.Task;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+
+
 
 public interface TaskRepository {
 

@@ -5,6 +5,8 @@ import com.sharipov.tasklist.domain.user.User;
 
 import java.util.Optional;
 
+
+
 public interface UserRepository {
     Optional<User> findById(Long id);
 
@@ -14,7 +16,7 @@ public interface UserRepository {
 
     void update(User user);
 
-    void insertUserRole(Long userId, Role role);
+    void insertUserRole( Long userId,Role role);
 
     boolean isTaskOwner(Long userId, Long taskId);
 
